@@ -1,4 +1,5 @@
-const TodoDetails = ({ name, description, category }) => {
+const TodoDetails = ({ todoData }) => {
+  const {name, description, category} = todoData;
   return (
     <div>
       <p>{name}</p>

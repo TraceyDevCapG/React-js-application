@@ -1,13 +1,28 @@
+import { useState } from "react";
+
 const TodoStatus = ({ status }) => {
+  const [isChecked, setIsTchecked] = useState(false);
   return (
     <div className="Todo-Status-container">
       <input
         type="checkbox"
-        id="Todo-status-{status}"
-        name="Todo-status-complete"
+        id="checkbox"
+        name="checkbox"
         value="Bike"
+        checked={isChecked}
+        onChange={() => {
+          setIsTchecked(!isChecked);
+        }}
+        onClick={() => {
+          if (!isChecked) {
+            console.log("checked")
+          } else {
+            console.log("not checked")
+          }
+        }}
+        
       />
-      <label for="Todo-status-complete">{status}</label>
+      <label htmlFor="checkbox">{status}</label>
     </div>
   );
 };
